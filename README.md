@@ -1,6 +1,6 @@
 # school-project-movie-quiz
 
-# Installation guide
+## Installation guide
 
 1. Clone the project
 2. Setup a postgresql database
