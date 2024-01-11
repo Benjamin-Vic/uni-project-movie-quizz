@@ -1,0 +1,27 @@
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0;
+
+    .left,
+    .right {
+        padding: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    button {
+        margin: 0 4px;
+    }
+}
+
+.body-container {
+    width: 100%;
+    height: calc(100% - 64px);
+
+    .content {
+        height: 100%;
+    }
+}

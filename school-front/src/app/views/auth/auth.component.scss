@@ -1,0 +1,36 @@
+.container {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        width: 400px;
+
+        padding: 16px;
+
+        border-radius: 8px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        .field {
+            width: 100%;
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .border {
+            border: 1px solid #ccc;
+        }
+
+        .link {
+            color: -webkit-link;
+            text-decoration: underline;
+            font-size: smaller;
+        }
+    }
+}

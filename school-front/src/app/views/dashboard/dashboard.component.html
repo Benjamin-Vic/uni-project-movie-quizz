@@ -1,0 +1,45 @@
+<div class="container">
+
+    <form [formGroup]="form" (submit)="submit()">
+        <mat-form-field class="field">
+            <!-- <mat-label>Search</mat-label> -->
+            <input id="search" type="text" formControlName="search" matInput>
+        </mat-form-field>
+
+        <button type="submit" class="btn" mat-flat-button [disabled]="!form.valid">
+            Search
+        </button>
+    </form>
+
+    @if (isLoaded) {
+
+
+    <div class="elements">
+
+        @for (element of elements; track element.imdbID) {
+
+        <mat-card class="element">
+            <mat-card-header class="header">
+                <mat-card-title>{{element.Title}}</mat-card-title>
+                <mat-card-subtitle>{{element.Year}}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="img" mat-card-image [src]="element.Poster" alt="Poster">
+            <mat-card-actions class="action">
+                <button mat-button (click)="redirect(element.imdbID)">PLAY</button>
+            </mat-card-actions>
+        </mat-card>
+
+        } @empty {
+
+        @if (firstRequestSent && isLoaded) {
+        No movies found
+        }
+
+        }
+    </div>
+
+    } @else if (firstRequestSent) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    }
+
+</div>

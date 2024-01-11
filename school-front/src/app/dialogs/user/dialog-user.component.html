@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>User</h1>
+
+<div mat-dialog-content>
+
+    <form [formGroup]="form">
+
+        <mat-form-field class="field">
+            <mat-label>Username</mat-label>
+            <input id="username" type="text" formControlName="username" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>Email</mat-label>
+            <input id="email" type="email" formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>Password</mat-label>
+            <input id="password" type="password" formControlName="password" matInput>
+        </mat-form-field>
+
+    </form>
+
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>No</button>
+    <button mat-button [mat-dialog-close]="form.value" cdkFocusInitial [disabled]="!form.valid">Ok</button>
+</div>

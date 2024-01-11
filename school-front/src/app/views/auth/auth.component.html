@@ -1,0 +1,73 @@
+<div class="container">
+    @if (isRegister) {
+
+    <h1>Register</h1>
+
+    <form [formGroup]="register_form" (submit)="registerSubmit()">
+
+        <mat-form-field class="field">
+            <mat-label>Username</mat-label>
+            <input id="username" type="text" formControlName="username" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>Email</mat-label>
+            <input id="email" type="email" formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>Password</mat-label>
+            <input id="password" type="password" formControlName="password" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>Password Confirmation</mat-label>
+            <input id="password_confirmation" type="password" formControlName="password_confirmation" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>OMDB Key</mat-label>
+            <input id="key" type="text" formControlName="key" matInput>
+        </mat-form-field>
+
+        <a class="link" href="https://www.omdbapi.com/apikey.aspx" target="_blank">Click here to have an OMDB Key</a>
+
+        <button type="submit" class="btn" mat-flat-button [disabled]="!register_form.valid">
+            Register
+        </button>
+
+        <button class="btn border" mat-flat-button (click)="isRegister = false">
+            Already have an account ?
+        </button>
+
+    </form>
+
+    } @else {
+
+    <h1>Login</h1>
+
+    <form [formGroup]="login_form" (submit)="loginSubmit()">
+
+        <mat-form-field class="field">
+            <mat-label>Email</mat-label>
+            <input id="email" type="email" formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>Password</mat-label>
+            <input id="password" type="password" formControlName="password" matInput>
+        </mat-form-field>
+
+        <button type="submit" class="btn" mat-flat-button [disabled]="!login_form.valid">
+            Login
+        </button>
+
+        <a class="btn border" mat-flat-button (click)="isRegister = true">
+            You do not have an account ?
+        </a>
+
+    </form>
+
+    }
+
+</div>
