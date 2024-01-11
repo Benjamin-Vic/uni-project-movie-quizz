@@ -8,3 +8,4 @@
 4. Modify the API '.env' credentials for the connection with the postgresql database
 5. Run 'npm install' and after 'npm start' inside the api file
 6. Run 'npm install' and after 'npm start' inside the front file
+7. Open your web navigator on 'http://localhost:4200/'
