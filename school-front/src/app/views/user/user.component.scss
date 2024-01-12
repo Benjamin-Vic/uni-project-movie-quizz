@@ -20,12 +20,14 @@
             width: 100%;
 
             .header {
-                height: 96px;
+                height: 128px;
             }
 
             .img {
                 height: 256px;
                 object-fit: contain;
+
+                margin: 0 0 8px 0;
             }
 
             .action {

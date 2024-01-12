@@ -29,11 +29,17 @@
 
     }
 
-    @for (possible_answer of possible_answers[step]; track possible_answer.value) {
-    <button class="btn" (click)="submit(possible_answer.correct)" [value]="possible_answer.value">
-        {{possible_answer.value}}
-    </button>
-    }
+    <div class="elements">
+
+        @for (possible_answer of possible_answers[step]; track possible_answer.value) {
+        <button class="btn" mat-raised-button color="primary" (click)="submit(possible_answer.correct)"
+            [value]="possible_answer.value">
+            {{possible_answer.value}}
+        </button>
+        }
+
+    </div>
+
 
 </div>
 } @else {
