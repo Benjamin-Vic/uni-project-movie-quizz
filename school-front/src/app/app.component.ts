@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         const token = this.cookieService.get('token');
 
-
         if (!token || token.length === 0) {
             this.isLoaded = true;
         } else {

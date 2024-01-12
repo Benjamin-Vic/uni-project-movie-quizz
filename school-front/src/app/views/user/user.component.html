@@ -1,0 +1,20 @@
+@if (isLoaded) {
+<div class="container">
+
+    <div class="elements">
+
+        @for (quiz of quizzes; track quiz.id) {
+        <mat-card class="element">
+            <mat-card-header class="header">
+                <mat-card-title>{{quiz.movie?.Title}} - {{quiz.score}} / 5</mat-card-title>
+                <mat-card-subtitle>{{quiz.movie?.Year}} - {{quiz.createdAt}}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="img" mat-card-image [src]="quiz.movie?.Poster" alt="Poster">
+        </mat-card>
+        }
+    </div>
+
+</div>
+} @else {
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
